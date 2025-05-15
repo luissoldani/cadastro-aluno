@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Aluno</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Sair</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="salvar()">
+    <ion-item>
+      <ion-label position="floating">Nome do Aluno</ion-label>
+      <ion-input [(ngModel)]="aluno.nome" name="nome" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email do Aluno</ion-label>
+      <ion-input [(ngModel)]="aluno.email" name="email" type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Idade</ion-label>
+      <ion-input [(ngModel)]="aluno.idade" name="idade" type="number" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Turma</ion-label>
+      <ion-input [(ngModel)]="aluno.turma" name="turma" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Data de Cadastro</ion-label>
+      <ion-datetime
+        presentation="date-time"
+        display-format="dd/MM/yyyy HH:mm"
+        [(ngModel)]="aluno.data_cadastro"
+        name="data_cadastro"
+        required>
+      </ion-datetime>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="ion-margin-top">Salvar</ion-button>
+  </form>
+</ion-content>
